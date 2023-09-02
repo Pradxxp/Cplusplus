@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+class mobile{
+    public:
+    string brand;
+    int rom;
+    int ram;
+    public:
+    void getdata(){
+        cout<<"Enter Brand name:"<<endl;
+        cin>>brand;
+        cout<<"Enter rom in GB:"<<endl;
+        cin>>rom;
+        cout<<"Enter ram in GB:"<<endl;
+        cin>>ram;
+    }
+    void display(){
+        cout<<"Brand:"<<brand<<endl;
+        cout<<"Rom:"<<rom<<" GB"<<endl;
+        cout<<"Ram:"<<ram<<" GB"<<endl;
+        
+    }
+};
+
+int main()
+{
+    mobile m[3];
+    for( int i = 0 ; i<3 ; i++){
+        cout<<"Enter details of mobile "<<i+1<<endl;
+        m[i].getdata();
+    }
+    
+    for ( int i=0 ; i<3 ; i++ ){
+        cout<<"Mobile "<<i+1<<endl;
+        m[i].display();
+    }
+
+    return 0;
+}
