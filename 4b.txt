@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class FriendClass;
+
+class MyClass {
+private:
+    int privateValue;
+
+public:
+    MyClass(int val) {
+        privateValue=val;
+    }
+
+    friend class FriendClass; // FriendClass is a friend of MyClass
+};
+
+class FriendClass {
+public:
+    void display(MyClass& myObj) {
+        cout << "Value of private member in MyClass accessed by FriendClass: " << myObj.privateValue << endl;
+    }
+};
+
+int main() {
+    MyClass myObj(42);
+    FriendClass friendObj;
+
+    friendObj.display(myObj);
+
+    return 0;
+}

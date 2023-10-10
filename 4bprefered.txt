@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+class class2;
+
+class class1{
+    friend class class2;
+    private:
+    int len;
+    int bth;
+    public:
+    class1(int l,int b){
+        len=l;
+        bth=b;
+    }
+};
+
+class class2{
+    public:
+    void calc_area(class1 obj){
+        cout<<"area is "<<obj.len*obj.bth;
+    }
+};
+int main(){
+    class1 obj1(5,4);
+    class2 obj2;
+    obj2.calc_area(obj1);
+    return 0;
+    
+}

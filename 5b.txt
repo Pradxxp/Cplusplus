@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Counter {
+private:
+    int count;
+
+public:
+    Counter(){
+        count=0;
+    }
+
+    void operator++() {
+        count++;
+        cout<<"Count has been incremented to "<<count<<endl;
+    }
+
+    void operator--() {
+        count--;
+        cout<<"Count has been decremented to "<<count<<endl;
+    }
+
+    
+};
+
+int main() {
+    Counter c;
+
+    // Increment count using overloaded ++
+    ++c;
+    
+
+    // Decrement count using overloaded --
+    --c;
+    
+
+    return 0;
+}
