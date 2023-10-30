@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class Fruit {
+public:
+    void taste() {
+        cout << "Tasting..." << endl;
+    }
+};
+class Apple : public Fruit {
+public:
+    void color() {
+        cout << "Color is red." << endl;
+    }
+};
+class Banana : public Fruit {
+public:
+    void peel() {
+        cout << "Peeling..." << endl;
+    }
+};
+int main() {
+    Apple myApple;
+    Banana myBanana;
+
+    myApple.taste(); 
+    myApple.color(); 
+
+    myBanana.taste(); 
+    myBanana.peel(); 
+
+    return 0;
+}
