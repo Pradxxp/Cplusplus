@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class Student{
+public:
+    char name[20];
+public:
+     void getName(){
+    cout<<"Enter name:"<<endl;
+    cin>>name;
+    }
+};
+class Test: virtual  public Student{
+public:
+    int m1,m2;
+public:
+    void getMarks(){
+    cout<<"Enter marks:"<<endl;
+    cin>>m1>>m2;
+    }
+
+};
+class Score : virtual public Student{
+public:
+    int s1;
+public:
+    void getScore(){
+    cout<<"Enter score:"<<endl;
+    cin>>s1;
+    }
+
+};
+class Results : public Test , public Score{
+public:
+    void display(){
+    cout<<"name:"<<name<<"\ntotal:"<<m1+m2+s1<<endl;
+    }
+
+};
+
+int main(){
+Results r1;
+r1.getName();
+r1.getMarks();
+r1.getScore();
+r1.display();
+return 0;
+}
