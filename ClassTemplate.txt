@@ -1,0 +1,33 @@
+#include<iostream>
+#define max 100
+using namespace std;
+template<class T>
+class Stack{
+    private :
+    T stack[max];
+    int top;
+    public:
+    Stack(){
+        top=-1;
+    }
+    void push(T var){
+        stack[++top]=var;
+    }
+    T pop(){
+        return stack[top--];
+    }
+};
+int main(){
+    Stack<float> s1;
+    s1.push(11.1f);
+    s1.push(22.2f);
+    cout<<"1. "<<s1.pop()<<endl;
+    cout<<"2. "<<s1.pop()<<endl;
+    
+    Stack<string> s2;
+    s2.push("pradeep");
+    s2.push("krishnaa");
+    cout<<"1. "<<s2.pop()<<endl;
+    cout<<"2. "<<s2.pop()<<endl;
+    return 0;
+}
