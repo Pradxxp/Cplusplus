@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Petrol {
+public:
+    void displaypetrol() {
+        cout << "Vehicle is petrol" << endl;
+    }
+};
+
+// Base class
+class Electric {
+public:
+    void displayelectric() {
+        cout << "Vehicle is electric" << endl;
+    }
+};
+
+// Derived class inheriting from Animal and Vehicle (Multiple Inheritance)
+class HybridVehicle : public Petrol, public Electric {
+public:
+    void displayhybrid() {
+        cout << "Hybrid Vehicle is a combination of petrol and electric." << endl;
+    }
+};
+
+// Another derived class inheriting from HybridVehicle (Multilevel Inheritance)
+class HybridCar : public HybridVehicle {
+public:
+    void hybridcar() {
+        cout << "Hybrid Car is a type of hybrid vehicle." << endl;
+    }
+};
+
+int main() {
+    HybridCar car;
+    car.displaypetrol();      // Accessing method from base class Animal
+    car.displayelectric();    // Accessing method from base class Vehicle
+    car.displayhybrid();  // Accessing method from class HybridVehicle
+    car.hybridcar();     // Accessing method from class HybridCar
+
+    return 0;
+}

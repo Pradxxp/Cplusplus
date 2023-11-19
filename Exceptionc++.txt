@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numerator = 10;
+    int denominator = 0;
+    int result;
+
+    try {
+        if (denominator == 0) {
+            throw "Division by zero error";
+        }
+        result = numerator / denominator;
+        cout << "Result: " << result << endl;
+    } catch (const char* error) {
+        cout << "Error: " << error << endl;
+    }
+
+    return 0;
+}
+
+#include <iostream>
+#include <exception>
+using namespace std;
+
+// Custom exception class for divide by zero
+class DivideByZeroException : public exception {
+public:
+    const char* what() const throw() {
+        return "Error: Division by zero";
+    }
+};
+
+int main() {
+    int numerator = 10;
+    int denominator = 0;
+    int result;
+
+    try {
+        if (denominator == 0) {
+            throw DivideByZeroException();
+        }
+        result = numerator / denominator;
+        cout << "Result: " << result << endl;
+    } catch (const DivideByZeroException& ex) {
+        cout << ex.what() << endl;
+    }
+
+    return 0;
+}

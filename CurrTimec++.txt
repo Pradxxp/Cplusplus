@@ -1,0 +1,16 @@
+#include <iostream>
+#include <ctime>
+
+int main() {
+    // Get current time
+    time_t currentTime;
+    time(&currentTime);
+
+    // Pointer to store the address of current time
+    time_t *timePointer = &currentTime;
+
+    // Print current time in seconds using pointer
+    std::cout << "Current time in seconds using pointer: " << *timePointer << std::endl;
+
+    return 0;
+}
